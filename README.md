@@ -15,7 +15,7 @@
 
 ```bibtex
 @inproceedings{ren2022look,
-  title   = {https://xuanchiren.com/pub/cvpr2022_submission.pdf},
+  title   = {Look Outside the Room: Synthesizing A Consistent Long-Term 3D Scene Video from A Single Image},
   author  = {Ren, Xuanchi and Wang, Xiaolong},
   booktitle = {Arxiv},
   year    = {2022}
