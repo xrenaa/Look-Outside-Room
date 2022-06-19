@@ -82,17 +82,13 @@ class VideoDataset(torch.utils.data.Dataset):
         self.image_dir = os.path.join(image_dir, split)
         
         # total scene
-        error = ["05206639890a7576", "4563fb1a1ed7b2fe", "813e14bb8e778547", "8cc7b7d71107c09d", 
-                 "906531d3bc42e80a", "a38fa7d13b11efa8", "b265466dd3c9089b", "d3db9d64716b5a6a"]
-        scene_paths = sorted(glob.glob(os.path.join(self.sequence_dir, "*")))[:100]
+        scene_paths = sorted(glob.glob(os.path.join(self.sequence_dir, "*")))
         
         clip_paths = []
         
         print("----------------Loading the Real Estate dataset----------------")
         for scene_path in tqdm(scene_paths):
             seq = scene_path.split("/")[-1]
-            if seq in error:
-                continue
                 
             im_root = os.path.join(self.image_dir, seq)
 

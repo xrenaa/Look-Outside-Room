@@ -54,13 +54,13 @@ class VideoDataset(torch.utils.data.Dataset):
 
             for clip_path in clip_list:
 
-#                 file = open(clip_path, 'rb')
-#                 video_clip = pickle.load(file)
-#                 file.close()
+                file = open(clip_path, 'rb')
+                video_clip = pickle.load(file)
+                file.close()
                 
-#                 if video_clip['rgb'].shape[0] >= self.clip_length:
-#                     # filter the data which is too short
-                 clip_paths.append(clip_path)
+                if video_clip['rgb'].shape[0] >= self.clip_length:
+                    # filter the data which is too short
+                    clip_paths.append(clip_path)
                 
         print("----------------Finish loading MP3D dataset----------------")
 

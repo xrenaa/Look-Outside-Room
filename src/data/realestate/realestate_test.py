@@ -34,27 +34,13 @@ class VideoDataset(torch.utils.data.Dataset):
         self.image_dir = os.path.join(image_dir, split)
         
         # total scene
-        error = ["31ee8cabc96b9a62","31fb7a80b21fc505","320c8fa9d4c8ecef","321911ae4a16f038","321b9f345813cbea",
-                 "322261824c4a3003","32294ad73efca3db","322d03d487fc0f01","3232f7457b27dbbc","323f971c7581f56e",
-                 "325ff82707386438","3260a42ccfba8973","32615afea87b52dd","3280ab6917df576f","32895c8add3bc2b4",
-                 "3289ad7a811d2348","3290731e5f908b92","329177dabfe2951d","32991f419c96ea0e","329aba411f341398",
-                 "329abf340d23b0b9","32a233e3093f09ef","32a2c04fd8321bbb","32b5f8207d08653c","32cccd10c84b4529",
-                 "32ce9b303717a29d","32d2163aa65c0e8a","32d28b7513f873be","32db375ab51d77a4","32dc25ef78b564a1",
-                 "32dfef9109202812","32e0b9e54e7dc9eb","32eba3e4cfb61f93","32f926c1cb9ce67d","330b925cef643b3f",
-                 "3317c40fd3e0a7b7","332294213fa15c56","33288d55dde83e72","333bf1aebc3963b1","402495688372685c",
-                 "43c71f2c4e438e48","573c702580c77fb0","67d2d83b0a571e50","81efce32d8a173df","97f84416b29317d3",
-                 "9f11dc868fa242d4","a10ef42e7af13974","c1e6ac4f872b9cf8","c1f2a61d61bd7e48","c203bfdc3d2715f9",
-                 "c211e68f8e67eccf","c2153789693cbe62","c21df1e3085cbac8","c2347e4668c6b481","c23b29fd5039577d", 
-                 "c6f8fddaf7782828"]
-        scene_paths = sorted(glob.glob(os.path.join(self.sequence_dir, "*")))[:100]
+        scene_paths = sorted(glob.glob(os.path.join(self.sequence_dir, "*")))
         clip_paths = []
         
         print("----------------Loading the Real Estate dataset----------------")
         for scene_path in tqdm(scene_paths):
             seq = scene_path.split("/")[-1]
-            if seq in error:
-                continue
-                
+            
             im_root = os.path.join(self.image_dir, seq)
 
             frames = [fname for fname in os.listdir(im_root) if fname.endswith(".png")]
