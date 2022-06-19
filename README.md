@@ -8,10 +8,11 @@ This repository contains the code (in PyTorch) for the model introduced in the f
 > Xuanchi Ren, Xiaolong Wang <br>
 > *CVPR 2022*<br>
 
-[[Paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Ren_Look_Outside_the_Room_Synthesizing_a_Consistent_Long-Term_3D_Scene_CVPR_2022_paper.pdf)]
-[[Supplementary](https://openaccess.thecvf.com/content/CVPR2022/supplemental/Ren_Look_Outside_the_CVPR_2022_supplemental.pdf)]
+**[[Paper](https://openaccess.thecvf.com/content/CVPR2022/papers/Ren_Look_Outside_the_Room_Synthesizing_a_Consistent_Long-Term_3D_Scene_CVPR_2022_paper.pdf)]
 [[Project Page (Demos)](https://xrenaa.github.io/look-outside-room/)]
+[[Supplementary](https://openaccess.thecvf.com/content/CVPR2022/supplemental/Ren_Look_Outside_the_CVPR_2022_supplemental.pdf)]**
 
+![Figure](assets/teaser.gif)
 
 Our method can synthesize a consistent long-term 3D scene video from a **single image**, especially for looking outside the room.
 
