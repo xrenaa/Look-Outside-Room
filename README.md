@@ -13,6 +13,8 @@ This repository contains the code (in PyTorch) for the model introduced in the f
 [[Project Page (Demos)](https://xrenaa.github.io/look-outside-room/)]
 
 
+Our method can synthesize a consistent long-term 3D scene video from a **single image**, especially for looking outside the room.
+
 ### Citation
 
 ```bibtex
@@ -33,7 +35,8 @@ This repository contains the code (in PyTorch) for the model introduced in the f
 5. [Evaluation](#evaluation)
 
 ## Introduction
-
+![image](https://xrenaa.github.io/look-outside-room/static/images/method.png)
+In this paper, we propose a novel approach to synthesize a consistent long-term video given a single scene image and a trajectory of large camera motions. Our approach utilizes an autoregressive Transformer to perform sequential modeling of multiple frames, which reasons the relations between multiple frames and the corresponding cameras to predict the next frame. To facilitate learning and ensure consistency among generated frames, we introduce a locality constraint based on the input cameras to guide self-attention among a large number of patches across space and time.
 
 ## Installation
 - Clone the repository:
