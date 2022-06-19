@@ -20,7 +20,7 @@ Our method can synthesize a consistent long-term 3D scene video from a **single 
 
 ```bibtex
 @inproceedings{ren2022look,
-  title   = {Learning Disentangled Representation by Exploiting Pretrained Generative Models: A Contrastive Learning View},
+  title   = {Look Outside the Room: Synthesizing A Consistent Long-Term 3D Scene Video from A Single Image},
   author  = {Ren, Xuanchi and Wang, Xiaolong},
   booktitle = {CVPR},
   year    = {2022}
