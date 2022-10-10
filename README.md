@@ -29,7 +29,7 @@ Our method can synthesize a consistent long-term 3D scene video from a **single 
 
 ### Update:
 
-:white_check_mark: Release pretrained model for Matterport 3D
+:white_check_mark: Release pretrained model for Matterport 3D  
 :black_square_button: Release pretrained model for RealEstate
 
 ## Contents
