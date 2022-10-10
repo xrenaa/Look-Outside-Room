@@ -171,6 +171,7 @@ else:
     module = model
 
 train_loader = sample_data(train_loader)
+dist.barrier()
 
 for idx in pbar:
     batch = next(train_loader)
@@ -191,7 +192,11 @@ for idx in pbar:
     if get_rank() == 0:
         pbar.set_description((f"loss: {loss:.4f};"))
 
-        if idx % args.visual_iter == 0:
+        if idx % args.ckpt_iter == 0:
+            torch.save(module.state_dict(), os.path.join(save_dir, "last.ckpt"))
+
+    if idx % args.visual_iter == 0:
+        if get_rank() == 0:
             gt_clip = batch["rgbs"][0].permute(1,0,2,3)
             gt_clip = vutils.make_grid(gt_clip)
             gt_clip = (gt_clip + 1)/2
@@ -224,5 +229,7 @@ for idx in pbar:
             merge = torch.cat([gt_clip.cpu(), recon_clip.cpu(), pred_clip.cpu()], 1).clamp(0,1)
             plt.imsave(os.path.join(visual_dir, "%06d.png" % idx), merge.permute(1,2,0).numpy())
 
-        if idx % args.ckpt_iter == 0:
-            torch.save(module.state_dict(), os.path.join(save_dir, "last.ckpt"))
+            dist.barrier()
+        else:
+            dist.barrier()
+        
