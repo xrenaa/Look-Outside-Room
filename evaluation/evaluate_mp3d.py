@@ -26,7 +26,7 @@ parser.add_argument("--ckpt", type=str, default="last",
 parser.add_argument("--data-path", type=str, default="/MP3D/test/",
                     help="data path")
 parser.add_argument("--len", type=int, default=4, help="len of prediction")
-parser.add_argument('--gpu', default= '1', type=str)
+parser.add_argument('--gpu', default= '0', type=str)
 parser.add_argument("--video_limit", type=int, default=20, help="# of video to test")
 parser.add_argument("--gap", type=int, default=3, help="")
 parser.add_argument("--seed", type=int, default=2333, help="")
@@ -48,12 +48,12 @@ cpt_path = "./experiments/mp3d/%s/model/%s.ckpt" % (args.exp, args.ckpt)
 video_limit = args.video_limit
 frame_limit = args.len
 
-target_save_path = "./experiments/%s/evaluate_frame_%d_video_%d_gap_%d/" % (args.exp, frame_limit, video_limit, args.gap)
+target_save_path = "./experiments/mp3d/%s/evaluate_frame_%d_video_%d_gap_%d/" % (args.exp, frame_limit, video_limit, args.gap)
 os.makedirs(target_save_path, exist_ok=True)
 
 # metircs
-from geofree.metric.metrics import perceptual_sim, psnr, ssim_metric
-from geofree.metric.pretrained_networks import PNet
+from src.metric.metrics import perceptual_sim, psnr, ssim_metric
+from src.metric.pretrained_networks import PNet
 
 vgg16 = PNet().to("cuda")
 vgg16.eval()

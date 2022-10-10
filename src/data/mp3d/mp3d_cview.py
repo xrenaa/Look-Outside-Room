@@ -88,12 +88,8 @@ class VideoDataset(torch.utils.data.Dataset):
         
         # then sample a inter-index
         inter_index = random.randint(0, rgb_clip.shape[0] - self.clip_length)
-        if torch.rand(1)[0] > 0.5:
-            first_index = inter_index + self.gap
-            second_index = inter_index + 2 * self.gap
-        else:
-            second_index = inter_index + self.gap
-            first_index = inter_index + 2 * self.gap
+        first_index = inter_index + self.gap
+        second_index = inter_index + 2 * self.gap
      
         rgbs = []
         R_rels = [] # the relative are all based on the init frame

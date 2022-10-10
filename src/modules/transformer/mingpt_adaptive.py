@@ -301,7 +301,7 @@ class GPT(nn.Module):
             loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1))
         
         if return_bias:
-            return logits, loss
+            return logits, h
         else:
             return logits, loss
 
