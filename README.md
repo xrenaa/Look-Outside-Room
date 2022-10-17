@@ -61,6 +61,9 @@ pip install opencv-python ffmpeg-python matplotlib tqdm omegaconf pytorch-lightn
 
 ## Data preparation
 ### Matterport 3D (this could be tricky):
+
+0. **Quick Access**: To enable quick access, we also provide some samples [here](https://www.dropbox.com/s/wdfpkyyceenoigt/test.zip?dl=0) (around 90G). You can download and place it under ``data/mp3d/``.
+
 1. Install [habitat-api](https://github.com/facebookresearch/habitat-api) and [habitat-sim](https://github.com/facebookresearch/habitat-sim). You need to use the following repo version (see this [SynSin issue](https://github.com/facebookresearch/synsin/issues/2) for details):
     1. habitat-sim: d383c2011bf1baab2ce7b3cd40aea573ad2ddf71
     2. habitat-api: e94e6f3953fcfba4c29ee30f65baa52d6cea716e
