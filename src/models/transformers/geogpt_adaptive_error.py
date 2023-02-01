@@ -204,7 +204,7 @@ class GeoTransformer(nn.Module):
             
             # p3 
             R_rel, t_rel = self.compute_camera_pose(batch["R_s"][:, i+2, ...], batch["t_s"][:, i+2, ...], 
-                                                    batch["R_s"][:, i+1, ...], batch["R_s"][:, i+1, ...])
+                                                    batch["R_s"][:, i+1, ...], batch["t_s"][:, i+1, ...])
             example["R_rel"] = R_rel
             example["t_rel"] = t_rel
             p.append(self.encode_to_p(example))
