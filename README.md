@@ -30,7 +30,7 @@ Our method can synthesize a consistent long-term 3D scene video from a **single 
 ### Update:
 
 :white_check_mark: Release pretrained model for Matterport 3D  
-:black_square_button: Release pretrained model for RealEstate
+:white_check_mark: Release pretrained model for RealEstate
 
 ## Contents
 
@@ -125,8 +125,8 @@ python sparse_from_realestate_format.py --txt_src ${ROOT/RealEstate10K}/${SPLIT}
 
 ## Pre-trained models:
 
-- Pre-trained model (Matterport3D): [Link](https://drive.google.com/file/d/1i744RlAPj7OYMf5cfrfLVnQ6CDMgQ3jT/view?usp=sharing). You can place it under `experiments/mp3d/{your_name}`.
-- Pre-trained model (RealEstate10K) (To Do)
+- Pre-trained model (Matterport3D): [Link](https://huggingface.co/xrenaa/Look-Outside-Room/blob/main/mp3d/last.ckpt). You can place it under `experiments/mp3d/{your_name}`.
+- Pre-trained model (RealEstate10K) [Link](https://huggingface.co/xrenaa/Look-Outside-Room/blob/main/realestate/last.ckpt). You can place it under `experiments/realestate/{your_name}`.
 
 ## Training:
 By default, the training scripts are designed for 4*32G GPUs. You can adjust the hyperparameters based on your machine.
